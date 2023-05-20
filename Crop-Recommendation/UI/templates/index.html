@@ -1,0 +1,351 @@
+
+<!-- crop -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Crop Recommendation</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<style>
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+   body{ background-image: url('rice.jpg');}
+	</style>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	</body>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<!-- custom css -->
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png?') }}"> -->
+
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
+
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+		rel="stylesheet">
+	<!-- //google fonts -->
+
+	<style>
+		header {
+			background-color: rgb(219, 169, 153);
+			margin-top: 0rem;
+			display: block;
+
+		}
+        footer {
+             text-align: center;
+             padding: 3px;
+             background-color: rgb(90 133 60);
+             color: white;
+}
+	</style>
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(90 133 60);">
+		<div class="container">
+			<a class="navbar-brand" >
+				<!-- <img src="logo.jpg" style="width: 90px; height: 55px" alt="logo"> -->
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+            <h2 style="text-align: center; margin: 0px; color: rgb(43 44 138);">
+                <b>CROP RECOMMENDATION AND PRICE PREDICTION MODEL</b>
+            </h2>
+		</div>
+	</nav>
+
+
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center"></a>
+	<!-- //move top icon -->
+
+
+    <style>
+
+        html body {
+          /* background-color: rgb(134, 209, 165); */
+          background-image: url("https://cdn.pixabay.com/photo/2016/12/16/13/18/canola-fields-1911392__340.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          
+          padding: 5px;
+          height: 450px; 
+      }
+    
+      
+    </style>
+    <!--Form Section-->
+    <br /><br />
+    <h2 style="text-align: center; margin: -20px; color: black">
+      <b>CROP RECOMMENDATION  </b>
+    </h2>
+    <br />
+    
+    <div class="sec"
+      style="
+        width: 400px;
+        height: 36rem;
+        margin: 0px auto;
+        color: black;
+        border-radius: 25px;
+        padding: 10px 10px;
+        background-image: url('farming.jpg');
+      "
+    >
+      <form method="POST" action="{{ url_for('predict') }}">
+        <div class="form-group" style="margin-bottom: 7px;">
+          <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="Nitrogen"
+            name="nitrogen"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold ; font-size: 14px; "
+            value="{{ request.form['Nitrogen'] }}"
+            required
+          />
+        </div>
+        <div class="form-group" style="margin-bottom: 7px;">
+          <label for="Phosphorous" style="font-size: 17px"
+            ><b>Phosphorous</b></label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="Phosphorous"
+            name="phosphorous"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold ; font-size: 14px; "
+            value="{{ request.form['Phosphorous'] }}"
+            required
+          />
+        </div>
+    
+        <div class="form-group" style="margin-bottom: 7px;">
+          <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="Pottasium"
+            name="pottasium"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold ; font-size: 14px; "
+            value="{{ request.form['Pottasium'] }}"
+            required
+          />
+        </div>
+    
+    
+        <div class="form-group" style="margin-bottom: 7px;">
+            <label for="Temprature" style="font-size: 17px"><b>Temprature</b></label>
+            <input
+              type="number"
+              class="form-control"
+              id="Temprature"
+              name="temperature"
+              placeholder="Enter the value (example:50)"
+              style="font-weight: bold ; font-size: 14px; "
+              value="{{ request.form['Temprature'] }}"
+              required
+            />
+          </div>
+    
+    
+        <div class="form-group" style="margin-bottom: 7px;">
+          <label for="ph" style="font-size: 17px"><b>ph level</b></label>
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="ph"
+            name="ph"
+            placeholder="Enter the value"
+            style="font-weight: bold ; font-size: 14px; "
+            value="{{ request.form['ph'] }}"
+            required
+          />
+        </div>
+        <div class="form-group" style="margin-bottom: 10px;">
+          <label for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)</b></label>
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="Rainfall"
+            name="rainfall"
+            placeholder="Enter the value"
+            style="font-weight: bold ; font-size: 14px; "
+            value="{{ request.form['Rainfall'] }}"
+            required
+          />
+        </div>
+    
+        <div class="d-flex justify-content-center" style="margin-bottom: 0px;">
+          <button
+            type="submit"
+            class="btn btn-info"
+            style="color: black; font-weight: bold; width: 230px; height: 50px; border-radius:10px; font-size: 20px;"
+          >
+            Predict
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- footer -->
+	<footer>
+        <p>PAVAN SESHA SAI KASUKURTI  &  TARUN JAISWAL<br>
+        <a href="jaiswaltarun0129@gmail.com" style="color:#9fff00">jaiswaltarun0129@gmail.com</a></p>
+      </footer>
+	<!-- //footer -->
+    
+    <!-- Form section -->
+    
+
+    <!-- //Products & Services -->
+    
+    
+    <!-- Creating custom grid and hover effect
+    <section>
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <div class="hovereffect">
+            <img class="img-responsive" src="images/s2.jpg" alt="">
+            <div class="overlay">
+               <h2>Hover effect 1</h2>
+               <a class="info" href="#">link here</a>
+            </div>
+        </div>
+    </div> -->
+    
+  
+    
+</body>
+
+</html>

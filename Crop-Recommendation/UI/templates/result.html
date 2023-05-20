@@ -1,0 +1,321 @@
+
+<!-- crop -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Crop Recommendation</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Agro Harvest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+
+	<style>
+		html {
+			font-size: 1rem;
+		}
+
+		@media (min-width: 576px) {
+			html {
+				font-size: 1.25rem;
+			}
+		}
+
+		@media (min-width: 768px) {
+			html {
+				font-size: 1.5rem;
+			}
+		}
+
+		@media (min-width: 992px) {
+			html {
+				font-size: 1.75rem;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			html {
+				font-size: 2rem;
+			}
+
+			html {
+				font-size: 1rem;
+			}
+
+			h1 {
+				font-size: 1.2rem;
+			}
+
+			h2 {
+				font-size: 1.1rem;
+			}
+
+			@media (min-width: 768px) {
+				html {
+					font-size: 1.1rem;
+				}
+
+				h1 {
+					font-size: 1.3rem;
+				}
+
+				h2 {
+					font-size: 1.2rem;
+				}
+			}
+
+			@media (min-width: 991px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.5rem;
+				}
+
+				h2 {
+					font-size: 1.4rem;
+				}
+			}
+
+			@media (min-width: 1200px) {
+				html {
+					font-size: 1.2rem;
+				}
+
+				h1 {
+					font-size: 1.7rem;
+				}
+
+				h2 {
+					font-size: 1.6rem;
+				}
+			}
+
+		}
+	</style>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<!-- css files -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<!-- bootstrap css -->
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<!-- custom css -->
+	<link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet"><!-- fontawesome css -->
+	<!-- //css files -->
+	<!-- <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png?') }}"> -->
+
+
+	<script type="text/JavaScript" src="{{ url_for('static', filename='scripts/cities.js') }}"></script>
+
+
+	<!-- google fonts -->
+	<link href="//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
+		rel="stylesheet">
+	<!-- //google fonts -->
+
+	<style>
+
+.warning {
+    border: 5px ridge #f00;
+    background-color: #ff0;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.warning img {
+    width: 100%;
+}
+
+.warning p {
+    font: small-caps bold 1.2rem sans-serif;
+    text-align: center;
+}
+
+		header {
+			background-color: rgb(219, 169, 153);
+			margin-top: 0rem;
+			display: block;
+
+		}
+        footer {
+             text-align: center;
+             padding: 3px;
+             background-color: rgb(90 133 60);
+             color: white;
+}
+html body {
+          /* background-color: rgb(134, 209, 165); */
+          background-image: url("https://cdn.pixabay.com/photo/2016/12/16/13/18/canola-fields-1911392__340.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+          padding: 0px;
+          height: 450px; 
+      }
+	</style>
+</head>
+
+<body>
+	
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark static-top" style="background-color: rgb(142, 203, 164);">
+		<div class="container">
+			<a class="navbar-brand" >
+				<!-- <img src="logo.jpg" style="width: 150px; height: 86px" alt="logo"> -->
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+            <h2 style="text-align: center; margin: 0px; color: rgb(43 44 138);">
+                <b>CROP RECOMMENDATION AND PRICE PREDICTION MODEL</b>
+            </h2>
+		</div>
+	</nav>
+
+
+	<!-- move top icon -->
+	<a href="#home" class="move-top text-center"></a>
+	<!-- //move top icon -->
+
+
+    <style>
+
+        html body {
+          background-color: rgb(38, 177, 52);
+          background: 'farming.jpg';
+          
+      }
+    </style>
+    <!--Form Section-->
+    <br /><br />
+    <h3 style="text-align: center; margin: 0px; color: black">
+      <b>CROP RECOMMENDATION AND PRICE PREDICTION <br> WITH (WPI) </b>
+    </h3>
+    <br />
+    
+    <div
+      style="
+       
+        height: 45rem;
+        margin: 0px auto;
+        color: black;
+        border-radius: 25px;
+        padding: 10px 10px;
+      "
+    >
+
+    
+    <div class="container py-2 mx-auto my-50 h-10 " style="margin: 0rem; width: 800px;">
+        
+        <div class="warning" >
+            <h3 class="text-center" style="color: #f00;">Recommended Crop :- <b>{{ crop }}</b> </i></h3>
+            <h5 class="text-center">Minimum Support Price of {{crop}} on <b>{{date}}</b>  <br>  <b>Rs. {{ msp }}</b>  </h5>
+			<h5 class="text-center">6-month of Wholesale Price Index(WPI) :-</h5>
+			<h6 class="text-center">  <b>{{ ricepred }}</b></h6>
+            <h5 class="text-center"><b>Date {{ date }} </b></h5>
+            <img id="picture" src="data:image/jpeg;base64,{{ rice }}" style="height: 250px;">
+        </div>
+        <!-- <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <div class="card card-body" style="justify-content: center;">
+                    <h1 class="text-center"><b>You should grow {{ crop }} </i>in your farm</b></h1>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- <div class="container py-2 mx-auto my-50 h-10 " style="margin: 4rem;">
+        <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <div class="card card-body" style="justify-content: center;">
+                    <h1 class="text-center"><b>MSP {{ msp }} </b></h1>
+                </div>
+            </div>
+        </div> 
+        <div class="warning">
+            <h4 class="text-center"><b>MSP {{ msp }} </b></h4>
+        </div>
+    </div> -->
+    <!-- <div class="container py-2 mx-auto my-50 h-10 " style="margin: 4rem;">
+        <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <div class="card card-body" style="justify-content: center;">
+                    <h1 class="text-center"><b>Date {{ date }} </b></h1>
+                </div>
+            </div>
+        </div> 
+        <div class="warning">
+            <h4 class="text-center"><b>Date {{ date }} </b></h4>
+        </div> 
+    </div> -->
+    <!-- <div class="container py-2 mx-auto my-50 h-10 " style="margin: 4rem;">
+        <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <div class="card card-body" style="justify-content: center;">
+                    <img id="picture" src="data:image/jpeg;base64,{{ rice }}">
+                    <h1 class="text-center"><b>Rice {{ rice }}</b></h1> 
+               </div>
+            </div>
+        </div> 
+         <div class="warning">
+            <img style="width: 400px; height: 400px;" id="picture" src="data:image/jpeg;base64,{{ rice }}">
+        </div> 
+    </div> -->
+    <div class="container py-2 mx-auto my-50 h-10 " style="margin: 4rem;">
+        <!-- <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <div class="card card-body" style="justify-content: center;">
+                    <h1 class="text-center"><b>Cotton {{ cotton }}</b></h1>
+                </div>
+            </div>
+        </div> -->
+        <div class="warning">
+            <h4 class="text-center"><b>Cotton {{ cotton }}</b></h4>
+        </div>
+    </div>
+    <div class="container py-2 mx-auto my-50 h-10 " style="margin: 4rem;">
+        <!-- <div class="row">
+            <div class="col-sm py-2 py-md-3">
+                <div class="card card-body" style="justify-content: center;">
+                    <h1 class="text-center"><b>Maize {{ maize }} </b></h1>
+                </div>
+            </div>
+        </div> -->
+        <div class="warning">
+            <h4 class="text-center"><b>Maize {{ maize }} </b></h4>
+        </div>
+    </div>
+    
+</body>
